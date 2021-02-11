@@ -252,6 +252,7 @@ namespace Cash_Register
             Application.Exit();
         }
 
+
         private void numberOfSwordsLabel_Click(object sender, EventArgs e)
         {
             //Added an easter egg
