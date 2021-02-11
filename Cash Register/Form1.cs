@@ -20,21 +20,24 @@ namespace Cash_Register
         SoundPlayer printerNoise;
         SoundPlayer errorNoise;
 
-
         double swordPrice = 5.03;
         double chestplatePrice = 10.75;
         double hammerPrice = 3.37;
 
-        double swordAmount;
-        double chestplateAmount;
-        double hammerAmount;
-        double tenderedAmount;
+        int orderNumber = 1;
+        int swordAmount;
+        int chestplateAmount;
+        int hammerAmount;
 
+        double tenderedAmount;
         double tax = 0.13;
         double totalPrice;
         double subTotal;
         double taxPrice;
         double change;
+
+        private int originalWidth;
+        private int originalHeight;
 
         public Form1()
         {
@@ -48,6 +51,9 @@ namespace Cash_Register
             sale = new SoundPlayer(Properties.Resources.Print_Receipt);
             printerNoise = new SoundPlayer(Properties.Resources.Printer_Noise);
             errorNoise = new SoundPlayer(Properties.Resources.Error_Noise);
+
+            originalWidth = this.Width;
+            originalHeight = this.Height;
         }
 
         private void calculateTotalButton_Click(object sender, EventArgs e)
@@ -145,6 +151,9 @@ namespace Cash_Register
         private void printReceiptButton_Click(object sender, EventArgs e)
         {
             printerNoise.Play();
+            this.Width = 525;
+
+
 
             //This code is to print the receipt
             receiptLabel.Show();
@@ -152,7 +161,7 @@ namespace Cash_Register
             Refresh();
             Thread.Sleep(100);
 
-            receiptLabel.Text += "\n\n Order Number 66";
+            receiptLabel.Text += $"\n\n Order Number {orderNumber++}";
             Refresh();
             Thread.Sleep(100);
             
@@ -202,6 +211,7 @@ namespace Cash_Register
         private void newOrderButton_Click(object sender, EventArgs e)
         {
             menuSelect.Play();
+            this.Width = 275;
 
             //This code is to reset everything so its not the same receipt when everything says 0
             swordAmount = 0;
@@ -227,12 +237,31 @@ namespace Cash_Register
             taxNumLabel.Text = "0";
             totalNumLabel.Text = "0";
             changeNumLabel.Text = "0";
+
+            swordPrice = 5.03;
+            chestplatePrice = 10.75;
+            hammerPrice = 3.37;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
             //This code is to exit the application
             Application.Exit();
+        }
+
+        private void numberOfSwordsLabel_Click(object sender, EventArgs e)
+        {
+            //Added an easter egg
+            numberOfSwordsLabel.Text = "https://www.youtube.com/watch?v=oHg5SJYRHA0";
+            numberOfSwordsLabel.Font = new Font("consolas" , numberOfSwordsLabel.Font.Size);
+            numberOfSwordsTextbox.Hide();
+            Width = 350;
+            Refresh();
+            Thread.Sleep(1000);
+            numberOfSwordsLabel.Text = "Number Of Swords";
+            numberOfSwordsLabel.Font = new Font("Segoe Script", numberOfSwordsLabel.Font.Size);
+            numberOfSwordsTextbox.Show();
+            Width = 275;
         }
     }
 }

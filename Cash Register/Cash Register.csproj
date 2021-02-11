@@ -125,5 +125,8 @@
   <ItemGroup>
     <None Include="Resources\Medieval Handwriting.cur" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Never Gonna Give You Up Original.mp3" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

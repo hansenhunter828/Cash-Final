@@ -66,6 +66,7 @@ namespace Cash_Register
             this.numberOfSwordsLabel.Size = new System.Drawing.Size(150, 22);
             this.numberOfSwordsLabel.TabIndex = 0;
             this.numberOfSwordsLabel.Text = "Number Of Swords";
+            this.numberOfSwordsLabel.Click += new System.EventHandler(this.numberOfSwordsLabel_Click);
             // 
             // numberOfChestplatesLabel
             // 
@@ -258,7 +259,7 @@ namespace Cash_Register
             // 
             this.antiCrashLabel.AutoSize = true;
             this.antiCrashLabel.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.antiCrashLabel.Location = new System.Drawing.Point(72, 9);
+            this.antiCrashLabel.Location = new System.Drawing.Point(35, 9);
             this.antiCrashLabel.Name = "antiCrashLabel";
             this.antiCrashLabel.Size = new System.Drawing.Size(0, 20);
             this.antiCrashLabel.TabIndex = 18;
@@ -307,7 +308,7 @@ namespace Cash_Register
             this.exitButton.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.White;
             this.exitButton.Image = global::Cash_Register.Properties.Resources.medieval_button_art;
-            this.exitButton.Location = new System.Drawing.Point(555, 7);
+            this.exitButton.Location = new System.Drawing.Point(544, 9);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(118, 32);
             this.exitButton.TabIndex = 22;
@@ -320,7 +321,7 @@ namespace Cash_Register
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Cash_Register.Properties.Resources.cash_register_background;
-            this.ClientSize = new System.Drawing.Size(685, 450);
+            this.ClientSize = new System.Drawing.Size(346, 450);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.newOrderButton);
             this.Controls.Add(this.receiptLabel);
