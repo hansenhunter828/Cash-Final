@@ -16,6 +16,7 @@ namespace Cash_Register
     {
 
 
+
         //Global Variables
         SoundPlayer menuSelect;
         SoundPlayer sale;
