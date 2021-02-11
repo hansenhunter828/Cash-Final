@@ -54,6 +54,8 @@ namespace Cash_Register
 
             originalWidth = this.Width;
             originalHeight = this.Height;
+
+            printReceiptButton.Hide();
         }
 
         private void calculateTotalButton_Click(object sender, EventArgs e)
@@ -111,7 +113,7 @@ namespace Cash_Register
         private void calculateChangeButton_Click(object sender, EventArgs e)
         {
             sale.Play();
-
+            printReceiptButton.Show();
             try
             {
                 //This code is to calculate the change
@@ -212,6 +214,7 @@ namespace Cash_Register
         {
             menuSelect.Play();
             this.Width = 275;
+            printReceiptButton.Hide();
 
             //This code is to reset everything so its not the same receipt when everything says 0
             swordAmount = 0;
