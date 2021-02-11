@@ -14,9 +14,6 @@ namespace Cash_Register
 {
     public partial class Form1 : Form
     {
-
-
-
         //Global Variables
         SoundPlayer menuSelect;
         SoundPlayer sale;
